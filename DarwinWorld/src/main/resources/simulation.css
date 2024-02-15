@@ -1,0 +1,72 @@
+#headerLabel {
+    -fx-font-size: 32;
+    -fx-spacing: 8;
+    -fx-padding: 16;
+}
+
+.inputParameters {
+    -fx-font-size: 12;
+    -fx-spacing: 2;
+    -fx-padding: 2;
+    -fx-alignment: center;
+}
+
+.subHeader {
+    -fx-font-size: 20;
+    -fx-spacing: 4;
+    -fx-padding: 4;
+}
+
+
+.vboxStat {
+    -fx-border-color: grey;
+    -fx-border-width: 1;
+    -fx-font-size: 12;
+    -fx-padding: 4;
+    -fx-alignment: center;
+}
+
+.topHBoxStyles {
+    -fx-content-display: center;
+    -fx-background-color: white;
+    -fx-padding: 5;
+}
+
+.bottomHBoxStyles {
+    -fx-content-display: center;
+    -fx-background-color: white;
+    -fx-padding: 5;
+}
+
+.button {
+    -fx-background-color: #505050; /* Kolor tła */
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-family: "Consolas", monospace;
+    -fx-padding: 5 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #000000;
+    -fx-margin-right: 10px;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.button:pressed {
+    -fx-background-color: #4CAF50;
+    -fx-border-color: #45a049;
+}
+
+.textLabels {
+    -fx-font-size: 16px;
+    -fx-font-family: "Consolas", monospace;
+    -fx-padding: 3;
+}
+
+#infoVBox {
+    -fx-content-display: center;
+    -fx-background-color: white;
+    -fx-padding: 5;
+}

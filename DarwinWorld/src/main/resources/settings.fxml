@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.*?>
+<?import java.lang.String?>
+<?import javafx.scene.control.CheckBox?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            minHeight="600.0" minWidth="950.0"
+            fx:controller="agh.ics.oop.presenter.SettingsPresenter"
+            stylesheets="simulation.css">
+    <top>
+        <VBox>
+            <HBox alignment="CENTER">
+                <Label fx:id="headerLabel" text="Evolve your digital world. Let's simulate!"/>
+            </HBox>
+            <Region minHeight="15" />
+            <HBox alignment="CENTER">
+                <Button text="Open CSV" onAction="#openCSV"/>
+                <Region minWidth="15" />
+                <Label fx:id="finalInfoOpening"/>
+            </HBox>
+            <Region minHeight="15" />
+            <HBox alignment="CENTER">
+                <Button text="Save to CSV" onAction="#saveToCSV"/>
+                <Region minWidth="15" />
+                <Label fx:id="finalInfoSaving"/>
+            </HBox>
+            <Region minHeight="15" />
+        </VBox>
+    </top>
+    <center>
+        <HBox alignment="CENTER" spacing="80">
+            <VBox alignment="CENTER_LEFT">
+                <HBox alignment="CENTER">
+                    <Label text="Animal Settings" styleClass="subHeader"/>
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Initial Animal Count" minWidth="170"/>
+                    <Spinner fx:id="numOfAnimals" minWidth="100" editable="true" initialValue="100" min="0" max="1000" />
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Initial Animal Energy" minWidth="170"/>
+                    <Spinner fx:id="animalEnergy" minWidth="100" editable="true" initialValue="20" min="0" max="1000" />
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Energy to be full" minWidth="170"/>
+                    <Spinner fx:id="energyForBeingFull" minWidth="100" editable="true" initialValue="20" min="0" max="1000" />
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Energy used for reproduction" minWidth="170"/>
+                    <Spinner fx:id="energyUsedForReproduction" minWidth="100" editable="true" initialValue="10" min="0" max="1000" />
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Min mutations" minWidth="170"/>
+                    <Spinner fx:id="minMutations" minWidth="100" editable="true" initialValue="0" min="0" max="1000" />
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Max mutations" minWidth="170"/>
+                    <Spinner fx:id="maxMutations" minWidth="100" editable="true" initialValue="5" min="0" max="1000" />
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Mutation Variant" minWidth="170"/>
+                    <ComboBox minWidth="148" value="Randomness">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Randomness" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Genome Length" minWidth="170"/>
+                    <Spinner fx:id="genomeLength" minWidth="100" editable="true" initialValue="5" min="0" max="1000" />
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Animal Behavior Variant" minWidth="170"/>
+                    <ComboBox fx:id="thereAndBack" minWidth="148" value="Predestination">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Predestination" />
+                                <String fx:value="There and back" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+            </VBox>
+            <VBox alignment="CENTER_RIGHT">
+                <HBox alignment="CENTER">
+                    <Label text="Map Settings" styleClass="subHeader"/>
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Map Height" minWidth="170"/>
+                    <Spinner fx:id="height" minWidth="100" editable="true" initialValue="30" min="0" max="1000" />
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Map Width" minWidth="170"/>
+                    <Spinner fx:id="width" minWidth="100" editable="true" initialValue="50" min="0" max="1000" />
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Map Variant" minWidth="170"/>
+                    <ComboBox minWidth="148" value="Globe">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Globe" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+
+                <Region minHeight="25" />
+
+                <HBox alignment="CENTER">
+                    <Label text="Plant Settings" styleClass="subHeader"/>
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Initial Plant Count" minWidth="170"/>
+                    <Spinner fx:id="grassCount" minWidth="100" editable="true" initialValue="50" min="0" max="1000" />
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Energy per Eaten Plant" minWidth="170"/>
+                    <Spinner fx:id="energyPerGrass" minWidth="100" editable="true" initialValue="20" min="0" max="1000" />
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Daily Growth of Plantst" minWidth="170"/>
+                    <Spinner fx:id="addGrassNumber" minWidth="100" editable="true" initialValue="10" min="0" max="1000" />
+                </HBox>
+                <HBox styleClass="inputParameters">
+                    <Label text="Plant Growth Variant " minWidth="170"/>
+                    <ComboBox fx:id="walkingJungle" minWidth="148" value="Forested equators">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Forested equators" />
+                                <String fx:value="Walking jungle" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+
+            </VBox>
+        </HBox>
+
+    </center>
+    <bottom>
+        <VBox alignment="TOP_CENTER">
+            <HBox styleClass="inputParameters">
+                <Label text="Map Update Interval [ms]" minWidth="170"/>
+                <Spinner fx:id="sleepMillisTime" minWidth="100" editable="true" initialValue="100" min="0" max="10000" />
+            </HBox>
+            <Region minHeight="7"/>
+            <HBox styleClass="inputParameters">
+                <Label text="Show animal energy"/>
+                <Region minWidth="15"/>
+                <CheckBox fx:id="showAnimalEnergyCheckbox"/>
+            </HBox>
+            <Region minHeight="7"/>
+            <HBox styleClass="inputParameters">
+                <Label text="Save every day to CSV"/>
+                <Region minWidth="15"/>
+                <CheckBox fx:id="saveEveryDayToCSV"/>
+                <Region minWidth="15"/>
+                <Button text="Select directory" onAction="#chooseDirectoryForEveryDay"/>
+                <Region minWidth="15" />
+                <Label fx:id="finalInfoChoosingEveryDayPath"/>
+            </HBox>
+
+
+            <Region minHeight="15" />
+            <Button fx:id="startButton" text="Start!" onAction="#onSimulationStartClicked"/>
+            <Region minHeight="5"/>
+            <Label fx:id="infoError" textFill="red"/>
+            <Region minHeight="15" />
+        </VBox>
+    </bottom>
+</BorderPane>

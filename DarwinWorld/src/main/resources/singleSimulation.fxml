@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Slider?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            minHeight="500.0" minWidth="1150.0"
+            fx:controller="agh.ics.oop.presenter.SingleSimulationPresenter"
+            stylesheets="simulation.css"
+            fx:id="rootPane">
+    <center>
+        <GridPane fx:id="mapGrid" gridLinesVisible="true" alignment="CENTER">
+        </GridPane>
+    </center>
+
+    <top>
+        <HBox styleClass="topHBoxStyles" alignment="CENTER_LEFT">
+            <Label styleClass="textLabels" text="ZOOM:"/>
+            <Region minWidth="10"/>
+            <Slider fx:id="zoomSlider" onMouseDragged="#changeZoom"/>
+            <Region minWidth="10"/>
+            <Button minWidth="70" fx:id="popularGenomeButton" text="Show popular genome" onAction="#highlightPopularGenome"/>
+            <Region minWidth="10"/>
+            <Button minWidth="70" fx:id="pauseResumeButton" text="Pause" onAction="#pauseResume"/>
+            <Region minWidth="10"/>
+            <Button minWidth="70" fx:id="highlightGrassButton" text="Highlight preferred grass places" onAction="#highlightDominantGrass"/>
+            <Region minWidth="10"/>
+            <Label styleClass="textLabels" text="[ Use arrows to navigate | Use space to pause/resume ]"/>
+            <Region minWidth="10"/>
+            <Label styleClass="textLabels" fx:id="currentDay" text="DAY: 0"/>
+        </HBox>
+    </top>
+
+    <right>
+
+        <VBox alignment="CENTER" VBox.vgrow="ALWAYS" visible="false" fx:id="infoVBox">
+            <GridPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+            </GridPane>
+
+            <HBox styleClass="vboxStat" spacing="4" GridPane.columnIndex="0" GridPane.halignment="CENTER">
+                <Label fx:id="followedHeader"/>
+            </HBox>
+            <HBox styleClass="vboxStat" spacing="4" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                <Label fx:id="followedGenome"/>
+            </HBox>
+            <HBox styleClass="vboxStat" spacing="4" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                <Label fx:id="followedEnergy"/>
+            </HBox>
+            <HBox styleClass="vboxStat" spacing="4" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+                <Label fx:id="followedEatenGrass"/>
+
+            </HBox>
+            <HBox styleClass="vboxStat" spacing="4" GridPane.columnIndex="4" GridPane.halignment="CENTER">
+                <Label fx:id="followedChildrenNumber"/>
+
+            </HBox>
+            <HBox styleClass="vboxStat" spacing="4" GridPane.columnIndex="5" GridPane.halignment="CENTER">
+                <Label fx:id="followedOffspringrenNumber"/>
+
+            </HBox>
+            <HBox styleClass="vboxStat" spacing="4" GridPane.columnIndex="6" GridPane.halignment="CENTER">
+                <Label fx:id="followedAge"/>
+
+            </HBox>
+            <HBox styleClass="vboxStat" spacing="4" GridPane.columnIndex="7" GridPane.halignment="CENTER" fx:id="deathHBox" visible="false">
+                <Label fx:id="followedDateOfDeath"/>
+
+            </HBox>
+        </VBox>
+
+
+    </right>
+
+    <bottom>
+        <HBox styleClass="bottomHBoxStyles">
+            <GridPane HBox.hgrow="ALWAYS">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <VBox styleClass="vboxStat" GridPane.columnIndex="0" GridPane.halignment="CENTER">
+                    <Label text="Amount of animals:"/>
+                    <Label fx:id="animalsCountLabel"/>
+                </VBox>
+                <VBox styleClass="vboxStat" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                    <Label text="Amount of grass:"/>
+                    <Label fx:id="grassCountLabel" />
+                </VBox>
+                <VBox styleClass="vboxStat" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                    <Label text="Average energy level:"/>
+                    <Label fx:id="avgEnergyLabel" />
+
+                </VBox>
+                <VBox styleClass="vboxStat" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+                    <Label text="Free spaces:"/>
+                    <Label fx:id="freeSpaceLabel" />
+
+                </VBox>
+                <VBox styleClass="vboxStat" GridPane.columnIndex="4" GridPane.halignment="CENTER">
+                    <Label text="Genotype:"/>
+                    <Label fx:id="genotypeLabel" />
+
+                </VBox>
+                <VBox styleClass="vboxStat" GridPane.columnIndex="5" GridPane.halignment="CENTER">
+                    <Label text="Average age:"/>
+                    <Label fx:id="avgAgeLabel" />
+
+                </VBox>
+                <VBox styleClass="vboxStat" GridPane.columnIndex="6" GridPane.halignment="CENTER">
+                    <Label text="Average offspring:"/>
+                    <Label fx:id="avgOffspringLabel" />
+
+                </VBox>
+                <HBox styleClass="vboxStat" GridPane.columnIndex="7" GridPane.halignment="CENTER">
+                    <Label fx:id="dominantGenotypePositionsLabel" />
+                </HBox>
+            </GridPane>
+        </HBox>
+
+
+    </bottom>
+</BorderPane>
