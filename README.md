@@ -1,5 +1,6 @@
 # Darwin-World
-Solution of the Dawrin World project
+Solution of the Dawrin World project 
+AGH UST
 
 
 
