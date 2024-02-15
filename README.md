@@ -1,6 +1,8 @@
 # Rozwiązanie projektu Darwin World
 
-Wersja E4
+Wersja E4 
+(wzrost roślin: pełzająca dżungla 
+przebieg mutacji: tam i z powrotem)
 
 Projekt był tworzony w grupach dwuosobowych 
 
@@ -30,13 +32,13 @@ Projekt był tworzony w grupach dwuosobowych
 
 
 
-##Podświetlenie równika
+## Podświetlenie równika
 
 ![image5](images/image4.png)
 
 
 
-**Podświetlenie dżungli**
+## Podświetlenie dżungli
 
 ![image6](images/image5.png)
 
