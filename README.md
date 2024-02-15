@@ -1,34 +1,36 @@
-Rozwiązanie projektu Darwin World
+# Rozwiązanie projektu Darwin World
 
 Wersja E4
 
+Projekt był tworzony w grupach dwuosobowych 
 
 
-**Panel początkowy:**
+
+## Panel początkowy:
 
 ![image1](images/image1.png)
 
 
 
-**Komunikat błędu:**
+## Komunikat błędu:
 
 ![image2](images/image6.png)
 
 
 
-**Mapa zwierząt:**
+## Mapa zwierząt:
 
 ![image3](images/image2.png)
 
 
 
-**Statystyki wybranego zwierzaka:**
+## Statystyki wybranego zwierzaka:
 
 ![image4](images/image3.png)
 
 
 
-**Podświetlenie równika**
+##Podświetlenie równika
 
 ![image5](images/image4.png)
 
