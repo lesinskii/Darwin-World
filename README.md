@@ -1,6 +1,8 @@
 # Darwin-World
 Solution of the Dawrin World project at AGH UST
 
+The solution is in the master branch
+
 
 
 # Projekt: Darwin World
