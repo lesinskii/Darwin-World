@@ -1,7 +1,7 @@
 # Rozwiązanie projektu Darwin World
 
 Wersja E4 
-(wzrost roślin: pełzająca dżungla 
+(wzrost roślin: pełzająca dżungla, 
 przebieg mutacji: tam i z powrotem)
 
 Projekt był tworzony w grupach dwuosobowych 
